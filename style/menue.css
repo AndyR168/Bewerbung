@@ -1,0 +1,238 @@
+/*---------------------Allgemein---------------------*/
+.menü {
+    z-index: 900;
+}
+
+.bild-nav {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+/*---------------------Keyframes---------------------*/
+
+@keyframes change 
+{
+0%{
+background-position: 0 50%;
+}
+50%{
+background-position: 100% 50%;
+}
+100%{
+background-position: 0 50%;
+}
+}
+
+/*-----------------Navigation / Menü-----------------*/
+/*---------------------Desktop----------------------*/
+
+@media only screen and (min-width: 800px) 
+{
+.menü {
+    width: 80px;
+    height: 100vh;
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    }
+
+.menü-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 15px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    }
+
+.menü-li {
+    width: 100%;
+    }
+
+.menü-li:last-child {
+    margin-top: auto;
+    margin-bottom: 35px;
+    }
+
+.menü-link {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    color: white;
+    text-decoration: none;
+    }
+
+.menü-text {
+    display: none;
+    margin-left: 2%;
+    }
+
+.menü-link:hover {
+    background: linear-gradient(-45deg, rgb(43, 43, 43), rgb(119, 118, 118), rgb(39, 39, 39), rgb(34, 34, 34));
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 5s ease-in-out infinite;
+    }
+
+.menü:hover {
+    width: 240px;   
+    }
+
+.menü:hover .menü-text {
+    display: block;
+    }
+
+.bild-nav {
+    margin-left: 20%;
+    }
+}
+
+/*-------------------ul 3d objekte-------------------*/
+/*-------------------pc display groß-----------------*/
+
+@media only screen and (min-width: 800px) 
+{
+
+ul {
+    min-width: none;
+    }
+
+ul li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background: black;
+    transform-origin: right;
+    transform: skewY(-45deg);
+    }    
+
+ul li::after {
+    content: "";
+    position: absolute;
+    top: 55px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    background: #000000;
+    transform-origin: top;
+    transform: skewX(-45deg);
+    }
+
+ul li {
+    position: relative;
+    list-style: none;
+    width: 200px;
+    background: rgb(0, 0, 0);
+    padding: 0px;
+    z-index: var(--i);
+    transition: 0.5s;
+    }    
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    text-transform: uppercase;
+    transition: 0.5s;
+    }
+
+ul li:hover a {
+    color: rgb(250, 250, 250);
+
+    }   
+
+ul li:hover {
+    background-color: rgb(59, 59, 59);
+    transform: translateX(25px) translateY(-10px);
+    }    
+
+ul li:hover::before {
+    background-color: rgba(59, 58, 58, 0.61);
+    }
+
+ul li:hover::after {
+    background-color: rgba(34, 34, 34, 0.952);
+    }
+}
+
+
+/*-----------------Navigation / Menü-----------------*/
+/*----------------------Tablet-----------------------*/
+
+@media only screen and (max-width: 800px) 
+{
+.menü {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: black;        
+    }
+    
+.menü-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    }
+    
+.menü-li {
+    width: 100%;
+    }
+            
+.menü-link {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    color: white;
+    text-decoration: none;
+    }
+    
+.menü-text {
+    display: flex;
+    margin-left: 2%;
+    }
+    
+.menü-link:hover {
+    background: linear-gradient(-45deg, rgb(66, 66, 66), rgb(58, 58, 58), rgb(19, 19, 19), rgb(48, 48, 48));
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 5s ease-in-out infinite;
+    }
+            
+.menü:hover .menü-text {
+    display: block;
+    }
+    
+.bild-nav {
+    margin-left: 10%;
+    }                
+}
+
+/*-----------------Navigation / Menü-----------------*/
+/*-----------------Handy Display---------------------*/
+
+@media only screen and (max-width: 700px) 
+{
+
+.menü-text {
+    display: none;
+    margin-left: 2%;
+    }
+
+.menü:hover .menü-text {
+    display: none;
+    }
+
+.bild-nav {
+    margin-left: 25px;
+    }
+}
